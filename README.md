@@ -7,3 +7,4 @@ This repository contains set of tutorial which are the introduction for the topi
 # Teaching Staff:
 * David Mera Pérez (responsable, USC)
 * Enrique Fernández Blanco (UDC)
+* David Olivieri Cecchi (UVigo)
