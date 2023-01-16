@@ -99,6 +99,22 @@ The environment must be active to list all its packages (<code> conda activate  
 
 <code>conda env create -f environment_file_name.yml</code>
 
+## Create the conda environment for developing the practices
+
+<code>conda create --name ml2</code>
+
+**Packages linked to the Online learning practices with River**
+
+<code>conda install jupyter scikit-learn pandas matplotlib python-graphviz</code>
+
+<code>conda install -c conda-forge river rich</code>
+
+**Packages linked to the Federated Learning practices with Flower**
+
+<code>conda install -c conda-forge flwr</code>
+
+<code>conda install tensorflow</code>
+
 
 ## Jupyter 
 
