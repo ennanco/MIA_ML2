@@ -111,7 +111,22 @@ The environment must be active to list all its packages (<code> conda activate  
 
 **Packages linked to the Federated Learning practices with Flower**
 
+There is a FLower package avaible in the conda-forge repository:
+
 <code>conda install -c conda-forge flwr</code>
+
+**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version
+
+<code>pip install flwr</code>
+
+For simulations that use the Virtual Client Engine, flwr should be installed with the simulation extra:
+
+<code>pip install flwr[simulation]</code> ***This is our scenario**
+
+It's important to note that Flower is not a learning framework in itself, and as such, it wraps other machine learning frameworks like TensorFlow, PyTorch, or Scikit-learn in the communication layer to enable federated learning.
+
+In the laboratory practices of this subject we are going to use tensorflow
+
 
 <code>conda install tensorflow</code>
 
