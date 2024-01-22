@@ -69,11 +69,15 @@ This command allows us to exit the environment.
 
 This operation cannot be reversed.
 
-<code>conda remove  --name environment_name</code>
+<code>conda remove  --name environment_name -all</code>
 
 **List all the available environments in our system**
 
 <code>conda info --envs</code>
+
+Alternative option to list all the available environments: 
+
+<code>conda envs list</code>
 
 **Install a new package in the environment**
 
@@ -107,7 +111,18 @@ The environment must be active to list all its packages (<code> conda activate  
 
 <code>conda install jupyter scikit-learn pandas matplotlib python-graphviz</code>
 
-<code>conda install -c conda-forge river rich</code>
+<code>conda install -c conda-forge rich</code>
+
+**Important!** There are two alternatives at this point:
+1. To acquire the River package from a conda repository, install it from the conda-forge. However, it's important to note that the latest available version of River in conda-forge is 0.13.
+
+<code>conda install -c conda-forge river </code>
+
+2. To acquire the most recent version of the River package (0.21.0), install it using pip within your virtual environment. Ensure that you utilize the pip version located specifically within your virtual environment, not the global one. Locate your virtual environment directory, typically found at a path similar to /anaconda/envs/virtual_env_name/.
+
+<code>/home/user/anaconda/envs/virtual_env_name/bin/pip install river</code>
+
+
 
 **Packages linked to the Federated Learning practices with Flower**
 
