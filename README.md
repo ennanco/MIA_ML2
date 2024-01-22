@@ -107,16 +107,21 @@ The environment must be active to list all its packages (<code> conda activate  
 
 <code>conda create --name ml2</code>
 
+*Make sure to note the installation directory of the virtual environment if you intend to use 'pip' from within it*
+
 **Packages linked to the Online learning practices with River**
 
 <code>conda install jupyter scikit-learn pandas matplotlib python-graphviz</code>
 
 <code>conda install -c conda-forge rich</code>
 
+*Note: The package installation from conda-forge use to be slow.*
+
 **Important!** There are two alternatives at this point:
 1. To acquire the River package from a conda repository, install it from the conda-forge. However, it's important to note that the latest available version of River in conda-forge is 0.13.
 
 <code>conda install -c conda-forge river </code>
+
 
 2. To acquire the most recent version of the River package (0.21.0), install it using pip within your virtual environment. Ensure that you utilize the pip version located specifically within your virtual environment, not the global one. Locate your virtual environment directory, typically found at a path similar to /anaconda/envs/virtual_env_name/.
 
@@ -155,3 +160,8 @@ In order to run Jupyter, the following command must be executed (the appropriate
 Once executed it is necessary to open the browser and access to  http://localhost:8888/. 
 
 The security token can be found in the terminal where we execute the command.
+
+## Notebooks
+To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
+
+<code>git clone git@github.com:ennanco/MIA_ML2.git</code>
