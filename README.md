@@ -135,7 +135,7 @@ There is a FLower package avaible in the conda-forge repository:
 
 <code>conda install -c conda-forge flwr</code>
 
-**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version
+**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version. Note that you should use the pip version located specifically within your virtual environment.
 
 <code>pip install flwr</code>
 
@@ -151,6 +151,12 @@ In the laboratory practices of this subject we are going to use tensorflow
 <code>conda install tensorflow</code>
 
 
+## Notebooks
+To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
+
+<code>git clone git@github.com:ennanco/MIA_ML2.git</code>
+
+
 ## Jupyter 
 
 In order to run Jupyter, the following command must be executed (the appropriate conda environment must be activated if necessary).
@@ -161,7 +167,4 @@ Once executed it is necessary to open the browser and access to  http://localhos
 
 The security token can be found in the terminal where we execute the command.
 
-## Notebooks
-To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
 
-<code>git clone git@github.com:ennanco/MIA_ML2.git</code>
