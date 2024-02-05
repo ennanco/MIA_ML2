@@ -156,6 +156,8 @@ To obtain the notebooks for developing laboratory practices, you can either down
 
 <code>git clone git@github.com:ennanco/MIA_ML2.git</code>
 
+**Important**: The examples located within the initial three working units (online ML+Concept Drift) have been specifically tailored for compatibility with **River 0.21**.
+
 
 ## Jupyter 
 
