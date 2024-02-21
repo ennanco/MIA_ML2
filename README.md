@@ -117,7 +117,7 @@ The environment must be active to list all its packages (<code> conda activate  
 
 *Note: The package installation from conda-forge use to be slow.*
 
-**Important!** There are two alternatives at this point:
+**Important!** There are two alternatives at this point (we recommend to use the second option):
 1. To acquire the River package from a conda repository, install it from the conda-forge. However, it's important to note that the latest available version of River in conda-forge is 0.13.
 
 <code>conda install -c conda-forge river </code>
@@ -127,6 +127,11 @@ The environment must be active to list all its packages (<code> conda activate  
 
 <code>/home/user/anaconda/envs/virtual_env_name/bin/pip install river</code>
 
+*Note*: To locale your virtual environment storage you can execute the following commands:
+<code>
+conda activate virtual_env_name \
+echo $CONDA_PREFIX
+</code>
 
 
 **Packages linked to the Federated Learning practices with Flower**
@@ -138,6 +143,12 @@ There is a FLower package avaible in the conda-forge repository:
 **However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version. Note that you should use the pip version located specifically within your virtual environment.
 
 <code>pip install flwr</code>
+
+*Note*: To locale your virtual environment storage you can execute the following commands:
+<code>
+conda activate virtual_env_name \
+echo $CONDA_PREFIX
+</code>
 
 For simulations that use the Virtual Client Engine, flwr should be installed with the simulation extra:
 
