@@ -111,9 +111,9 @@ The environment must be active to list all its packages (<code> conda activate  
 
 **Packages linked to the Online learning practices with River**
 
-<code>conda install jupyter scikit-learn pandas matplotlib python-graphviz</code>
+<code>conda install jupyter scikit-learn pandas matplotlib python-graphviz rich</code>
 
-<code>conda install -c conda-forge rich</code>
+
 
 *Note: The package installation from conda-forge use to be slow.*
 
@@ -123,7 +123,7 @@ The environment must be active to list all its packages (<code> conda activate  
 <code>conda install -c conda-forge river </code>
 
 
-2. To acquire the most recent version of the River package (0.21.0), install it using pip within your virtual environment. Ensure that you utilize the pip version located specifically within your virtual environment, not the global one. Locate your virtual environment directory, typically found at a path similar to /anaconda/envs/virtual_env_name/.
+2. To acquire the most recent version of the River package (0.22.0), install it using pip within your virtual environment. Ensure that you utilize the pip version located specifically within your virtual environment, not the global one. Locate your virtual environment directory, typically found at a path similar to /anaconda/envs/virtual_env_name/, whether you installed Anaconda.
 
 <code>/home/user/anaconda/envs/virtual_env_name/bin/pip install river</code>
 
