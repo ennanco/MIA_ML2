@@ -183,7 +183,9 @@ The security token can be found in the terminal where we execute the command.
 
 # Troubleshooting
 - River's wrapper module, designed for integration with libraries like scikit-learn, is currently experiencing compatibility issues.  Scikit-Learn version 1.6.1 (released January 2025) exhibits integration problems with River 0.22, resulting in an <code>'super' object has no attribute '__sklearn_tags__' </code> error in Unit02.  Until River is updated, downgrading scikit-learn is the recommended workaround.
+  
 <code>conda uninstall scikit-learn</code>
+
 <code>conda install scikit-learn=1.5.2 </code>
 
 
