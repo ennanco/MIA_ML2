@@ -55,13 +55,13 @@ It is possible to establish a specific Python version for the environment.
 
 **Activate the environment**
 
-The activation of the environment allows us to work with the packages and features of that environment. It is important to keep in mind that outside the environment these libraries do not necessarily exist. 
+The activation of the environment allows us to work with the packages and features of that environment. It is important to keep in mind that outside the environment these libraries do not necessarily exist.
 
 <code>conda activate  environment_name</code>
 
 **Deactivate an environment**
 
-This command allows us to exit the environment. 
+This command allows us to exit the environment.
 
 <code>conda deactivate</code>
 
@@ -75,7 +75,7 @@ This operation cannot be reversed.
 
 <code>conda info --envs</code>
 
-Alternative option to list all the available environments: 
+Alternative option to list all the available environments:
 
 <code>conda envs list</code>
 
@@ -161,6 +161,9 @@ In the laboratory practices of this subject we are going to use tensorflow
 
 <code>conda install tensorflow</code>
 
+Also, it is worth mentioning that since version 1.15 the simulation mode has a dependency on the ray library to spread the calculations. Therefore, the following line would be required:
+
+<code>conda install ray[default]</code>
 
 ## Notebooks
 To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
@@ -170,20 +173,20 @@ To obtain the notebooks for developing laboratory practices, you can either down
 **Important**: The examples located within the initial three working units (online ML+Concept Drift) have been specifically tailored for compatibility with **River 0.21**.
 
 
-## Jupyter 
+## Jupyter
 
 In order to run Jupyter, the following command must be executed (the appropriate conda environment must be activated if necessary).
 
 <code>jupyter notebook</code>
 
-Once executed it is necessary to open the browser and access to  http://localhost:8888/. 
+Once executed it is necessary to open the browser and access to  http://localhost:8888/.
 
 The security token can be found in the terminal where we execute the command.
 
 
 # Troubleshooting
 - River's wrapper module, designed for integration with libraries like scikit-learn, is currently experiencing compatibility issues.  Scikit-Learn version 1.6.1 (released January 2025) exhibits integration problems with River 0.22, resulting in an <code>'super' object has no attribute '__sklearn_tags__' </code> error in Unit02.  Until River is updated, downgrading scikit-learn is the recommended workaround.
-  
+
 <code>conda uninstall scikit-learn</code>
 
 <code>conda install scikit-learn=1.5.2 </code>
