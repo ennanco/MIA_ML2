@@ -140,7 +140,7 @@ There is a FLower package avaible in the conda-forge repository:
 
 <code>conda install -c conda-forge flwr</code>
 
-**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version. Note that you should use the pip version located specifically within your virtual environment.
+**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version. **Note** that you should use the pip version located specifically within your virtual environment.
 
 <code>pip install flwr</code>
 
@@ -163,14 +163,16 @@ In the laboratory practices of this subject we are going to use tensorflow
 
 Also, it is worth mentioning that since version 1.15 the simulation mode has a dependency on the ray library to spread the calculations. Therefore, the following line would be required:
 
-<code>conda install ray[default]</code>
+<code>pip install ray[default]</code>
+
+**Note** that you should use the pip version located specifically within your virtual environment.
 
 ## Notebooks
 To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
 
 <code>git clone git@github.com:ennanco/MIA_ML2.git</code>
 
-**Important**: The examples located within the initial three working units (online ML+Concept Drift) have been specifically tailored for compatibility with **River 0.21**.
+**Important**: The examples located within the initial three working units (online ML+Concept Drift) have been specifically tailored for compatibility with **River 0.22**.
 
 
 ## Jupyter
