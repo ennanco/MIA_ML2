@@ -185,6 +185,13 @@ Once executed it is necessary to open the browser and access to  http://localhos
 
 The security token can be found in the terminal where we execute the command.
 
+Alternatively you can opt to install a kernel qith the environmen. For doing that you should execute the following instruction once the environment is activated in the terminal
+
+<code>python -m ipykernel install --user --name mia-ml2 --display-name "Python (MIA-ML2)"</code>
+
+Once done, you can select that kernel in the Jupyter Notebook with the corresponding dependencies.
+
+
 
 # Troubleshooting
 - River's wrapper module, designed for integration with libraries like scikit-learn, is currently experiencing compatibility issues.  Scikit-Learn version 1.6.1 (released January 2025) exhibits integration problems with River 0.22, resulting in an <code>'super' object has no attribute '__sklearn_tags__' </code> error in Unit02.  Until River is updated, downgrading scikit-learn is the recommended workaround.
