@@ -1,8 +1,23 @@
-![GitHub](https://img.shields.io/github/license/ennanco/MIA_ML1?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=Python)
+![License](https://img.shields.io/github/license/ennanco/MIA_ML2?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&style=flat-square)
+![Env](https://img.shields.io/badge/env-uv-orange?style=flat-square)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.7.2-blue?style=flat-square)
+![Status](https://img.shields.io/badge/status-teaching--material-informational?style=flat-square)
+
 
 ![Banner](img/MLII.png)
 
-This repository contains set of tutorial which are the introduction for the topics covered in the subject Machine Learning II of the Master in Artificial Intelligence tought at the three universities of Galicia, i. e., University of A Coruña (UDC), University of Santiago de Compostela (USC), University of Vigo (UVigo).
+This repository contains a set of tutorials which are the introduction for the topics covered in the subject Machine Learning II of the Master in Artificial Intelligence taught at the three universities of Galicia: University of A Coruña (UDC), University of Santiago de Compostela (USC), and University of Vigo (UVigo).
+
+- [Teaching Staff](#teaching-staff)
+- [Development Environment](#development-environment)
+  - [Quick guide: package and environment management with uv](#quick-guide-package-and-environment-management-with-uv)
+  - [Install Required Packages](#install-required-packages)
+- [Notebooks](#notebooks)
+- [Jupyter](#jupyter)
+- [Troubleshooting](#troubleshooting)
+- [Notes](#notes)
+
 
 # Teaching Staff:
 * David Mera Pérez (coordinator, USC)
@@ -12,193 +27,198 @@ This repository contains set of tutorial which are the introduction for the topi
 
 # Development Environment
 
-The practices will be developed via Notebooks. In order to run them you will need to install Python (>3.8), a Notebook server (e.g. Jupyter) and all the necessary packages for executing the programs. There are different possible configurations, you can use the configuration more appropriate for your interest. However, in this manual we will give you some alternatives:
+The practical sessions will be developed via Notebooks. To run them you will need Python (>3.8), a Notebook server (e.g., Jupyter), and all the necessary packages. There are different configuration options depending on your preferences:
 
+1. **Google Colab**: Run the Notebooks online and install extra libraries using commands such as `!pip install xxx`. The free tier has some limitations, mainly related to computing resources.
 
-1. [Google Colab](https://colab.research.google.com/) environment to run the Notebooks. Colab allows you to load Notebooks and also create new ones. It is also possible to install new libraries using commands such as <code>!pip install xxx</code>. The free account has some limitations, most of them linked to the computing resources.
+2. **Python + pip + virtual environments**: Install Python (>3.8) from the official website. Dependencies can be installed using `pip` inside a virtual environment.
 
-2. [Python](https://www.python.org/downloads/) (>3.8) and [pip](https://pip.pypa.io/en/stable/installation/) (pip is automatically installed if you are working with virtual environments or if you are installed Python from the official web page). Once Python is installed, Jupyter and the rest of the necessary packages can be installed using <code>pip install xxx</code>.
+3. **uv**: A fast Python package and environment manager that replaces conda for this course. It creates standard virtual environments and uses `pip`-compatible workflows.
 
-3. [Anaconda](https://www.anaconda.com/) is a development framework focused on Data Science and Machine Learning, which is available in Windows, Linux and MacOS. This framework is composed of different packages and software including Jupyter and [conda](https://docs.conda.io/en/latest/). The latter is a package environment management  system that allows us to have different virtual package environments in the same system. While `pip` installs packages at system level and may cause conflicts, conda allows to have each package configuration in a separate virtual environment without conflicts.  All the dependencies are managed by conda. Users can activate and deactivate virtual environments at their discretion. The way to manage the packages is using the command <code>conda install xxx</code> instead of pip.
+---
 
-4. [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a free minimal installer for conda,  which is available in Windows, Linux and MacOS. It is a small, bootstrap version of Anaconda that includes *only* conda, Python, the packages they depend on, and a small number of other useful packages.
-Anaconda is a huge framework with many unnecessary packages. Miniconda allows the user only install the necesary ones.  It must be noted that Jupyter is not included in Minicoda. It must be installed as a new package  <code>conda install jupyter</code>.
+## Quick guide: package and environment management with `uv`
 
+This project uses **`uv`** as an alternative to conda for managing Python environments and dependencies.  
+`uv` creates **standard Python virtual environments**, so the usual `pip` workflows apply.
 
+### Create the virtual environment
 
+From the root of the repository:
 
-## Conda Environments
+```bash
+uv venv
+```
 
-**Conda commands for managing environments**
+This creates a standard virtual environment in `.venv/`.
 
-[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html](
-https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+---
 
-**Conda cheatsheet**
+### Activate the environment
 
-[https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf](
-https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)
+`uv` does **not** provide its own `activate` command.  
+Activation is done using the standard Python `venv` scripts.
 
+**macOS / Linux**
+```bash
+source .venv/bin/activate
+```
 
-### Useful conda commands
+**Windows (PowerShell)**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
 
-**All these commands must be run in a terminal**. These commands have been checked in a Linux system. Some differences may appear in other distributions.
+---
 
+### Install all project dependencies
 
-**Create an environment**
+With the corresponding environment activated, all dependencies are defined in `requirements.txt` and can be installed.
 
-<code> conda create --name environment_name</code>
+```bash
+pip install -r requirements.txt
+```
 
-It is possible to establish a specific Python version for the environment.
+> Since the environment was created with `uv`, this `pip` command installs packages inside the project virtual environment.
 
-<code> conda create --name environment_name python=x.y.z</code>
+---
 
-**Activate the environment**
+### Install a single package
 
-The activation of the environment allows us to work with the packages and features of that environment. It is important to keep in mind that outside the environment these libraries do not necessarily exist.
+If the environment is activated:
 
-<code>conda activate  environment_name</code>
+```bash
+pip install package_name
+```
 
-**Deactivate an environment**
+Example:
+```bash
+pip install river
+```
 
-This command allows us to exit the environment.
+---
 
-<code>conda deactivate</code>
+### Install packages **without activating** the environment (alternative)
 
-**Remove an environment**
+You can also use `uv` directly:
 
-This operation cannot be reversed.
+```bash
+uv pip install package_name
+```
 
-<code>conda remove  --name environment_name -all</code>
+Examples:
+```bash
+uv pip install river
+uv pip install "flwr[simulation]"
+uv pip install -r requirements.txt
+```
 
-**List all the available environments in our system**
+This automatically installs packages into the project virtual environment (`.venv`).
 
-<code>conda info --envs</code>
+---
 
-Alternative option to list all the available environments:
+### Run commands inside the environment (without activation)
 
-<code>conda envs list</code>
+Instead of activating the environment, you may use:
 
-**Install a new package in the environment**
+```bash
+uv run command
+```
 
-To install a package in an environment, the environment must be active (<code>conda activate  environment_name</code>).
+Example:
+```bash
+uv run jupyter notebook
+```
 
-<code>conda install package_name</code>
+This ensures the command runs using the project virtual environment.
 
-**List all the installed packages in a environment**
+---
 
-The environment must be active to list all its packages (<code> conda activate  environment_name</code>).
+### Summary
 
-<code>conda list</code>
+| Task | Recommended command |
+|---|---|
+| Create environment | `uv venv` |
+| Activate environment | `source .venv/bin/activate` |
+| Install dependencies | `pip install -r requirements.txt` |
+| Install one package | `pip install package_name` |
+| Install without activation | `uv pip install package_name` |
+| Run command without activation | `uv run command` |
 
-**Export an environment file**
 
-<code>conda env export > environment_file_name.yml</code>
+## Install Required Packages
 
-**Export an environment file across platforms**
 
-<code>conda env export --from-history > environment_file_name.yml</code>
+The table below summarizes the main libraries used in the course. **You do not need to install them one-by-one** (they are already included in `requirements.txt`), but this overview can help you understand what each unit relies on.
 
-**Create a new environment from a .yml file**
+| Package | Used for | Notes |
+|---|---|---|
+| `jupyter` / `ipykernel` | Running notebooks locally | Optional kernel registration supported |
+| `numpy`, `pandas` | Data manipulation | Core scientific stack |
+| `matplotlib` | Plotting | Figures in notebooks |
+| `scikit-learn==1.7.2` | Classical ML + utilities | **Pinned** for River compatibility |
+| `river` | Online learning + concept drift | Early units (Online ML) |
+| `flwr[simulation]` | Federated learning simulations | Simulation extras required |
+| `tensorflow` | Federated learning labs | Model training backend |
+| `ray[default]` | Flower simulation backend | Required by Flower simulation mode |
+| `python-graphviz` | Visualization | Some notebooks use Graphviz |
+| `rich` | Pretty console output | Used in some examples |
 
-<code>conda env create -f environment_file_name.yml</code>
-
-## Create the conda environment for developing the practices
-
-<code>conda create --name ml2</code>
-
-*Make sure to note the installation directory of the virtual environment if you intend to use 'pip' from within it*
-
-**Packages linked to the Online learning practices with River**
-
-<code>conda install jupyter scikit-learn pandas matplotlib python-graphviz rich</code>
-
-
-
-*Note: The package installation from conda-forge use to be slow.*
-
-**Important!** There are two alternatives at this point (we recommend to use the second option):
-1. To acquire the River package from a conda repository, install it from the conda-forge. However, it's important to note that the latest available version of River in conda-forge is 0.13.
-
-<code>conda install -c conda-forge river </code>
-
-
-2. To acquire the most recent version of the River package (0.22.0), install it using pip within your virtual environment. Ensure that you utilize the pip version located specifically within your virtual environment, not the global one. Locate your virtual environment directory, typically found at a path similar to /anaconda/envs/virtual_env_name/, whether you installed Anaconda.
-
-<code>/home/user/anaconda/envs/virtual_env_name/bin/pip install river</code>
-
-*Note*: To locale your virtual environment storage you can execute the following commands:
-<code>
-conda activate virtual_env_name \
-echo $CONDA_PREFIX
-</code>
-
-
-**Packages linked to the Federated Learning practices with Flower**
-
-There is a FLower package avaible in the conda-forge repository:
-
-<code>conda install -c conda-forge flwr</code>
-
-**However**, the official web page recommends to install it from the pip repository in order to get the newest and stablest version. **Note** that you should use the pip version located specifically within your virtual environment.
-
-<code>pip install flwr</code>
-
-*Note*: To locale your virtual environment storage you can execute the following commands:
-<code>
-conda activate virtual_env_name \
-echo $CONDA_PREFIX
-</code>
-
-For simulations that use the Virtual Client Engine, flwr should be installed with the simulation extra:
-
-<code>pip install flwr[simulation]</code> ***This is our scenario**
-
-It's important to note that Flower is not a learning framework in itself, and as such, it wraps other machine learning frameworks like TensorFlow, PyTorch, or Scikit-learn in the communication layer to enable federated learning.
-
-In the laboratory practices of this subject we are going to use tensorflow
-
-
-<code>conda install tensorflow</code>
-
-Also, it is worth mentioning that since version 1.15 the simulation mode has a dependency on the ray library to spread the calculations. Therefore, the following line would be required:
-
-<code>pip install ray[default]</code>
-
-**Note** that you should use the pip version located specifically within your virtual environment.
+---
 
 ## Notebooks
-To obtain the notebooks for developing laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git via HTTPS or SSH. Please note that for the SSH connection, you must have an SSH certificate.
 
-<code>git clone git@github.com:ennanco/MIA_ML2.git</code>
+To obtain the notebooks for laboratory practices, you can either download the ZIP file from GitHub or clone the repository using Git:
 
-**Important**: The examples located within the initial three working units (online ML+Concept Drift) have been specifically tailored for compatibility with **River 0.22**.
+```bash
+git clone git@github.com:ennanco/MIA_ML2.git
+```
 
+**Important:** The examples located within the initial three working units (online ML + Concept Drift) have been specifically tailored for compatibility with **River 0.22**.
+
+---
 
 ## Jupyter
 
-In order to run Jupyter, the following command must be executed (the appropriate conda environment must be activated if necessary).
+With the virtual environment activated, run:
 
-<code>jupyter notebook</code>
+```bash
+jupyter notebook
+```
 
-Once executed it is necessary to open the browser and access to  http://localhost:8888/.
+Then open your browser at `http://localhost:8888/`.
 
-The security token can be found in the terminal where we execute the command.
+The security token will be shown in the terminal.
 
-Alternatively you can opt to install a kernel qith the environmen. For doing that you should execute the following instruction once the environment is activated in the terminal
+### Optional: Install a dedicated kernel
 
-<code>python -m ipykernel install --user --name mia-ml2 --display-name "Python (MIA-ML2)"</code>
+```bash
+python -m ipykernel install --user --name mia-ml2 --display-name "Python (MIA-ML2)"
+```
 
-Once done, you can select that kernel in the Jupyter Notebook with the corresponding dependencies.
+This allows selecting the correct environment from within Jupyter.
 
-
+---
 
 # Troubleshooting
-- River's wrapper module, designed for integration with libraries like scikit-learn, is currently experiencing compatibility issues.  Scikit-Learn version 1.6.1 (released January 2025) exhibits integration problems with River 0.22, resulting in an <code>'super' object has no attribute '__sklearn_tags__' </code> error in Unit02.  Until River is updated, downgrading scikit-learn is the recommended workaround.
 
-<code>conda uninstall scikit-learn</code>
+- River’s wrapper module, designed for integration with libraries like scikit-learn, currently has compatibility issues.
+  Scikit-Learn versions ≥ 1.8.0 exhibit integration problems with River, resulting in the following error in Unit02:
 
-<code>conda install scikit-learn=1.5.2 </code>
+```
+'super' object has no attribute '__sklearn_tags__'
+```
 
+Until River is updated, the recommended workaround is to downgrade scikit-learn:
 
+```bash
+pip uninstall scikit-learn
+pip install "scikit-learn==1.7.2"
+```
 
+---
+
+## Notes
+
+- Always ensure you are using the `pip` from the active virtual environment.
+- You may also use Google Colab if you prefer not to install anything locally.
