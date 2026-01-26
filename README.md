@@ -33,7 +33,7 @@ The practical sessions will be developed via Notebooks. To run them you will nee
 
 2. **Python + pip + virtual environments**: Install Python (>3.8) from the official website. Dependencies can be installed using `pip` inside a virtual environment.
 
-3. **uv**: A fast Python package and environment manager that replaces conda for this course. It creates standard virtual environments and uses `pip`-compatible workflows.
+3. **uv**: A fast Python package and environment manager that replaces conda for this course. It creates standard virtual environments and uses `pip`-compatible workflows. The official documentation is available at this [link](https://docs.astral.sh/uv/)
 
 ---
 
