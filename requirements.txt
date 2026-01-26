@@ -32,8 +32,9 @@ jedi==0.19.2
 joblib==1.5.3
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
-jupyter-client==8.8.0
-jupyter-core==5.9.1
+notebook>=7.0.0
+ipykernel>=6.0.0
+ipython>=8.0.0
 keras==3.13.1
 kiwisolver==1.4.9
 libclang==18.1.1
